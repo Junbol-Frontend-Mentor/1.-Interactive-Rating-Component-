@@ -43,11 +43,27 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 
 ### What I learned
 
-- creating all the logic in Javascript to do the creation of the buttons dynamically.
-- Adding the right css animation to the panels
-- Using javascript to add the logic to make panel scroll down and show up
+- creating all the logic in Javascript to do the seletion of the buttons dynamically using the forEach method.
+- Using javascript to add the logic to make the modal panel show up
 
 ```
+// Show the modal on submit button click
+mySubmitBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent form submission
+
+  // 🚩Ensure a rating has been selected before proceeding
+  if (selectedRating) {
+    // Update the modal content with the selected rating
+    myRatingSelection.innerHTML = `You selected ${selectedRating} out of 5`; // this
+
+    // Hide the rating panel and show the modal
+    myRatingPanel.style.display = 'none';
+    myModal.style.display = 'flex';
+  } else {
+    // 🚩don't forget to add an alert if the user didn't select a rating
+    alert('Please select a rating before submitting.');
+  }
+});
 
 
 ```

@@ -69,7 +69,7 @@ Add active class to the clicked button using this.
 */
 
 //------ Fifth:
-
+/*
 // Ensure the modal is hidden initially with CSS
 document.getElementById('mainModal').style.display = 'none';
 
@@ -95,8 +95,20 @@ ratingButtons.forEach((button) => {
     myRatingSelection.innerHTML('#');
   });
 });
-
+*/
 //------Sixth:
+
+// Ensure the modal is hidden initially with CSS
+document.getElementById('mainModal').style.display = 'none';
+
+let ratingButtons = document.querySelectorAll('.buttons-grp__button');
+let myRatingPanel = document.getElementById('ratingPanel');
+let myModal = document.getElementById('mainModal');
+let mySubmitBtn = document.getElementById('submitButton');
+let myRatingSelection = document.getElementById('rating');
+
+// Variable to store the selected rating
+let selectedRating = null;
 
 ratingButtons.forEach((button) => {
   // Add a 'click' event listener to each button
@@ -107,7 +119,7 @@ ratingButtons.forEach((button) => {
     // Add the 'active' class to the clicked button (this refers to the clicked button)
     this.classList.add('active');
     // Capture the selected rating
-    selectedRating = this.textContent;// this will select teh numbers or ratings inside each button
+    selectedRating = this.textContent; // this will select teh numbers or ratings inside each button
   });
 });
 
@@ -118,12 +130,13 @@ mySubmitBtn.addEventListener('click', (e) => {
   // 🚩Ensure a rating has been selected before proceeding
   if (selectedRating) {
     // Update the modal content with the selected rating
-    myRatingSelection.innerHTML = `You selected ${selectedRating} out of 5`;// this 
+    myRatingSelection.innerHTML = `You selected ${selectedRating} out of 5`; // this
 
     // Hide the rating panel and show the modal
     myRatingPanel.style.display = 'none';
     myModal.style.display = 'flex';
-  } else {// 🚩don't forget to add an alert if the user didn't select a rating
+  } else {
+    // 🚩don't forget to add an alert if the user didn't select a rating
     alert('Please select a rating before submitting.');
   }
 });
