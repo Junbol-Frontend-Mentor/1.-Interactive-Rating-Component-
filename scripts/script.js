@@ -27,7 +27,7 @@ ratingButtons.forEach((button) => {
 mySubmitBtn.addEventListener('click', (e) => {
   e.preventDefault(); // Prevent form submission
 
-  // 🚩Ensure a rating has been selected before proceeding
+  // 🚩Make sure a rating has been selected before proceeding
   if (selectedRating) {
     // Update the modal content with the selected rating
     myRatingSelection.innerHTML = `You selected ${selectedRating} out of 5`; // this
