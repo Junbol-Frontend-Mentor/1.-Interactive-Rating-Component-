@@ -1,0 +1,201 @@
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: hsl(216, 12%, 8%);
+}
+
+main {
+  flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content and push the footer to the bottom*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.rating-container {
+  width: 100%;
+  min-height: 300px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: hsl(213, 19%, 18%);
+}
+.rating-container img {
+  /* Corrected nesting for img */
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+.rating-container h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.rating-container p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 2rem;
+}
+.rating-container__submitBtn {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 25px;
+  background-color: hsl(25, 97%, 53%);
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.rating-container__submitBtn:hover {
+  background-color: hsl(34, 100%, 58%);
+}
+.rating-container .buttons-grp {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 6rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.rating-container .buttons-grp__button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+  transition: transform 0.5s ease;
+  background-color: hsl(217, 12%, 63%);
+}
+.rating-container .buttons-grp__button:hover, .rating-container .buttons-grp__button:focus {
+  background-color: hsl(25, 97%, 53%);
+  transform: scale(1.2);
+}
+.rating-container .buttons-grp__button.active {
+  background-color: hsl(25, 97%, 53%);
+  transform: scale(1.2);
+}
+
+.modal {
+  width: 80%;
+  min-height: 10rem; /* Use min-height to accommodate varying content sizes */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 18rem;
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(213, 19%, 18%);
+}
+.modal img {
+  margin-bottom: 2rem;
+}
+.modal h1 {
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.modal p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.modal__selection {
+  width: 12rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  background-color: hsl(213, 19%, 34%);
+}
+.modal__selection h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(25, 97%, 53%);
+}
+
+.attribution {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 12rem;
+  margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
+  color: hsl(0, 0%, 50%);
+}
+
+.attribution a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .rating-container {
+    max-width: 500px;
+    margin-top: 3rem;
+  }
+  .modal {
+    max-width: 400px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

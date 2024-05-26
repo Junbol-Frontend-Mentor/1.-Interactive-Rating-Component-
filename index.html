@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Rating state start -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script defer src="./scripts/script.js"></script>
+  </head>
 
-  How did we do?
+  <body>
+    <main>
+      <!-- Rating state start -->
+      <section class="rating-container" id="ratingPanel">
+        <img src="./assets/images/icon-star.svg" alt="" />
+        <!-- Form start -->
+        <form class="rating-form">
+          <div class="question">
+            <label for="rating">
+              <h1>How did we do?</h1>
+              <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+            </label>
+          </div>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+          <div class="buttons-grp" id="buttons">
+            <button class="buttons-grp__button" type="button" id="rate-1">1</button>
+            <button class="buttons-grp__button" type="button" id="rate-2">2</button>
+            <button class="buttons-grp__button" type="button" id="rate-3">3</button>
+            <button class="buttons-grp__button" type="button" id="rate-4">4</button>
+            <button class="buttons-grp__button" type="button" id="rate-5">5</button>
+          </div>
+          <button class="rating-container__submitBtn" id="submitButton" type="submit">SUBMIT</button>
+        </form>
+        <!-- Sign-up form end -->
+      </section>
+      <!-- Rating state end -->
 
-  1 2 3 4 5
+      <!-- Thnnk You message start -->
+      <section class="modal" id="mainModal">
+        <div><img class="iconSuccess" src="./assets/images/illustration-thank-you.svg" alt="thank you image" /></div>
+        <div class="modal__selection"><h3 id="rating"></h3></div>
+        <h1>Thank you!</h1>
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+      </section>
+      <!--Thank you message end -->
+    </main>
 
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="#">Junier Bolívar © 2024</a>
+    </footer>
+  </body>
 </html>

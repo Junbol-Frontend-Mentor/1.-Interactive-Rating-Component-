@@ -1,0 +1,225 @@
+// Importing Google Fonts
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//------GENERAL SETTINGS -------------------------------
+
+// Universal reset also explicitly to all pseudo-elements
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+// Define color variables
+$colors: (
+  //--------PRIMARY-----------------------------------
+  'orange': hsl(25, 97%, 53%),
+  'light-orange': hsl(34, 100%, 58%),
+  //--------NEUTRAL    ----------------------------
+  'light-grey': hsl(217, 12%, 63%),
+  'dark-blue': hsl(213, 19%, 18%),
+  'blue': hsl(213, 19%, 34%),
+  'very-dark-blue': hsl(216, 12%, 8%),
+  //--------STANDARD -----------------------------------
+  /*Neutral*/ 'white': hsl(0, 0%, 100%),
+  /*Neutral*/ 'grey': hsl(0, 0%, 50%),
+  /*Neutral*/ 'black': hsl(0, 0%, 0%)
+);
+
+// Function to retrieve colors
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// Typography Mixin with parameters
+@mixin typography($weight, $size, $line-height, $color) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures that the total height is at least the height of the viewport */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: color('very-dark-blue');
+  //background-color: crimson;
+}
+
+main {
+  flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content and push the footer to the bottom*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1.5rem;
+  //background-color: aqua;
+}
+
+.rating-container {
+  width: 100%;
+  min-height: 300px; /* Use min-height to accommodate varying content sizes */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: color('dark-blue');
+  //background-color: chartreuse;
+  img {
+    /* Corrected nesting for img */
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    @include typography(600, 2rem, 1.5, color('white'));
+  }
+  p {
+    @include typography(400, 1rem, 1.5, color('white'));
+    margin-bottom: 2rem;
+  }
+
+  &__submitBtn {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: color('orange');
+    margin-bottom: 1rem;
+    @include typography(700, 1rem, 1.5, color('white'));
+    &:hover {
+      background-color: color('light-orange'); // Light grey on hover
+    }
+  }
+
+  .buttons-grp {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 6rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    //background-color: aquamarine;
+    &__button {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      @include typography(700, 1.5rem, 1.5, color('white'));
+      transition: transform 0.5s ease;
+      background-color: color('light-grey');
+      &:hover,
+      &:focus {
+        background-color: color('orange');
+        transform: scale(1.2);
+      }
+      &.active {
+        // Define active state styles
+        background-color: color('orange');
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+//------- MODAL --------------
+
+.modal {
+  width: 80%;
+  min-height: 10rem; /* Use min-height to accommodate varying content sizes */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 18rem;
+  //top: 50%; //it positions the top edge of the modal element halfway down the height of its parent element. Implicit Height: Even if main does not have an explicit height property, it still has a height that is determined by its content and any padding or margins applied. This content height is what 50% refers to.
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); //the -50% values are relative to the element's own dimensions, not its parent.
+  //animation: float 3s ease-in-out infinite;
+  padding: 2rem;
+  // z-index: -1;
+  //margin: 0 auto;
+  border-radius: 15px;
+  @include typography(700, 1rem, 1.5, color('white'));
+  background-color: color('dark-blue');
+  //background-color: chartreuse;
+  img {
+    margin-bottom: 2rem;
+  }
+  h1 {
+    margin-bottom: 1rem;
+    @include typography(600, 2rem, 1.5, color('white'));
+  }
+  p {
+    @include typography(400, 1rem, 1.5, color('white'));
+  }
+  &__selection {
+    width: 12rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    background-color: color('blue');
+    h3 {
+      @include typography(600, 1rem, 1.5, color('orange'));
+    }
+  }
+}
+
+// ------- MAGIC ----------------------------
+
+//------   FOOTER    ----------------
+
+.attribution {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 12rem;
+  margin-bottom: 3rem; /* Keeps the footer at the bottom but only after all other content */
+  color: color('grey');
+}
+.attribution a {
+  color: color('white');
+  text-decoration: none;
+}
+
+//------ MEDIA QUERY FOR DESKTOPS AND TABLETS ----------------
+
+@media (min-width: 768px) {
+  .rating-container {
+    max-width: 500px;
+    margin-top: 3rem;
+  }
+  .modal {
+    max-width: 400px;
+  }
+}
+
+/////////////////------ NOTES --------///////////////////////////
+//🛠
