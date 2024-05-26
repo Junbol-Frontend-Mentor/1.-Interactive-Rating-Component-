@@ -1,6 +1,6 @@
-# Frontend Mentor - FAQ accordion solution
+# Frontend Mentor - Interactive rating component solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -25,8 +25,8 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 
 ### Links
 
-- Solution URL: (https://github.com/Junbol-Frontend-Mentor/faq-accordion)
-- Live Site URL: (https://junbol-frontend-mentor.github.io/faq-accordion/)
+- Solution URL: (https://github.com/Junbol-Frontend-Mentor/interactive-rating-component)
+- Live Site URL: (https://junbol-frontend-mentor.github.io/interactive-rating-component/)
 
 ## My process
 
